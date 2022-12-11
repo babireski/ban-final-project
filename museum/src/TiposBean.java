@@ -1,29 +1,36 @@
-public class TiposBean {
+public class TiposBean
+{
 	private int id;
 	private String name;
 	
-	public TiposBean(int id, String name) {
+	public TiposBean(int id, String name)
+	{
 		this.id = id;
 		this.name = name;
 	}
 
-	public int getId() {
+	public int getId()
+	{
 		return id;
 	}
 
-	public String getName() {
+	public String getName()
+	{
 		return name;
 	}
 	
-	public void setId(int id) {
+	public void setId(int id)
+	{
 		this.id = id;
 	}
 	
-	public void setName(String name) {
+	public void setName(String name)
+	{
 		this.name = name;
 	}
 	
-	public String toString() {
+	public String toString()
+	{
 		String s = "";
 		s += "Identificador: " + id + "\n";
 		s += "Nome: " + name + "\n";
