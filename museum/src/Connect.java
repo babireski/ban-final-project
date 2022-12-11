@@ -46,7 +46,7 @@ public class Connect
 			Logger.getLogger(Connect.class.getName()).log(Level.SEVERE, null, exception);
 			exception.printStackTrace();
 			System.exit(1);
-		}  
+		}
 	}
 	
 	public Connection getConnection()

@@ -3,7 +3,7 @@ import java.util.*;
 
 public class TiposController
 {
-    public void createTipo(Connection connection) throws SQLException
+	public void createTipo(Connection connection) throws SQLException
 	{
 		try(Scanner input = new Scanner(System.in))
 		{
@@ -20,16 +20,16 @@ public class TiposController
 			
 			System.out.println("Tipo criado com sucesso!"); 
 		}    
-    }
+	}
 
-    void listarTipos(Connection connection) throws SQLException
+	void listarTipos(Connection connection) throws SQLException
 	{
-        HashSet types = TiposModel.listAll(connection);
-        Iterator<TiposBean> iterator = types.iterator();
-        
+		HashSet types = TiposModel.listAll(connection);
+		Iterator<TiposBean> iterator = types.iterator();
+		
 		while(iterator.hasNext())
 		{
-            System.out.println(iterator.next().toString());
-        }
-    }
+			System.out.println(iterator.next().toString());
+		}
+	}
 }
