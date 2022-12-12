@@ -5,21 +5,19 @@ public class ItensBean
 	private int code;
 	private String nome;
 	private String description;
-	private Date creation;
-	private String materials;
+	private int year;
 	private int idTipo;
 	private TiposBean tipo;
 	private float height;
 	private float length;
 	private float depth;
 
-	public ItensBean(int code, String nome, String description, Date creation, String materials, int idTipo, float height, float length, float depth)
+	public ItensBean(int code, String nome, String description, int year, int idTipo, float height, float length, float depth)
 	{
 		this.code = code;
 		this.nome = nome;
 		this.description = description;
-		this.creation = creation;
-		this.materials = materials;
+		this.year = year;
 		this.idTipo = idTipo;
 		this.height = height;
 		this.length = length;
@@ -43,14 +41,9 @@ public class ItensBean
 		return description;
 	}
 
-	public Date getCreation()
+	public int getYear()
 	{
-		return creation;
-	}
-
-	public String getMaterials()
-	{
-		return materials;
+		return year;
 	}
 
 	public TiposBean getTipo()
@@ -95,14 +88,9 @@ public class ItensBean
 		this.description = description;
 	}
 
-	public void setCreation(Date creation)
+	public void setYear(int year)
 	{
-		this.creation = creation;
-	}
-
-	public void setMaterials(String materials)
-	{
-		this.materials = materials;
+		this.year = year;
 	}
 
 	public void setTipo(TiposBean tipo)
@@ -134,10 +122,17 @@ public class ItensBean
 
 	public String toString()
 	{
-		StringBuffer buffer = new StringBuffer();
-		buffer.append("Identificador: " + code +"\nNome: "+ nome + "\nDescricao: "+ description + "\nData de Criação: " + creation + "\n Materiais: "+ materials + "\n");
-		if(tipo != null) buffer.append("\nTipo: "+ tipo.getName());
+		String string = "";
+
+		string += "Identificador: " + code + "\n";
+		string += "Nome: " + nome + "\n";
+		string += "Descrição: " + description + "\n";
+		string += "Ano: " + (year != 0 ? year : "Desconhecido") + "\n";
+		string += "Identificador: " + code + "\n";
+		string += "Dimensões: " + height + " x " + length + " x " + depth + "\n";
 		
-		return buffer.toString();
+		if(tipo != null) string += "Tipo: "+ tipo.getName() + "\n";
+		
+		return string;
 	}
 }

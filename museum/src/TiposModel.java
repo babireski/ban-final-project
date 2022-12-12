@@ -18,7 +18,7 @@ public class TiposModel
 	static HashSet listAll(Connection connection) throws SQLException
 	{
 		Statement statement;
-		HashSet list = new HashSet();
+		HashSet tipos = new HashSet();
 
 		statement = connection.createStatement();
 		String sql = "SELECT identificador, nome FROM tipos";
@@ -26,21 +26,9 @@ public class TiposModel
 		
 		while(result.next())
 		{
-			list.add(new TiposBean(result.getInt(1), result.getString(2)));
+			tipos.add(new TiposBean(result.getInt(1), result.getString(2)));
 		}
 
-		return list;
-	}
-
-	static HashSet listAllWithItems(Connection connection) throws SQLException
-	{
-			Statement statement;
-			HashSet list = new HashSet();
-			
-			statement = connection.createStatement();
-			String sql = "SELECT tipos.identificador, tipos.nome FROM tipos NATURAL JOIN itens";
-			ResultSet result = statement.executeQuery(sql);
-
-			return list;
+		return tipos;
 	}
 }

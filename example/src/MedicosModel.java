@@ -54,7 +54,9 @@ public class MedicosModel {
         st = con.createStatement();
         String sql = "SELECT codm, nome, idade, especialidade, cpf, cidade, medicos.nroa, andar, capacidade FROM medicos NATURAL JOIN ambulatorios";
         ResultSet result = st.executeQuery(sql);
-        while(result.next()) {
+		
+        while(result.next())
+		{
             MedicosBean mb = new MedicosBean(result.getInt(1), result.getString(2), result.getInt(3),
                     result.getString(4), result.getLong(5), result.getString(6), result.getInt(7));
             AmbulatoriosBean a = new AmbulatoriosBean(result.getInt(7), result.getInt(8), result.getInt(9));
