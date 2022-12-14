@@ -12,22 +12,6 @@ public class Connect
 		String driver = "org.postgresql.Driver";
 		String url = "jdbc:postgresql://localhost:5432/museum";
 
-		// try
-		// {
-		// 	Enumeration<Driver> drivers = DriverManager.getDrivers();
-		// 	while (drivers.hasMoreElements())
-		// 	{
-		// 		Driver nextElement = drivers.nextElement();
-		// 		JOptionPane.showMessageDialog(null, nextElement.acceptsURL("jdbc:postgresql://localhost:5432/museum"));
-		// 		JOptionPane.showMessageDialog(null, nextElement.acceptsURL("jdbc:postgresql://localhost:5432/postgres"));
-		// 	}
-		// } 
-		
-		// catch(SQLException exception)
-		// {
-		// 	exception.printStackTrace();
-		// }
-
 		try
 		{
 			Class.forName(driver);

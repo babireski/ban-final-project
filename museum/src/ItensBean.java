@@ -128,7 +128,7 @@ public class ItensBean
 		string += "Nome: " + nome + "\n";
 		string += "Descrição: " + description + "\n";
 		string += "Ano: " + (year != 0 ? year : "Desconhecido") + "\n";
-		string += "Identificador: " + code + "\n";
+		string += "Identificador do tipo: " + idTipo + "\n";
 		string += "Dimensões: " + height + " x " + length + " x " + depth + "\n";
 		
 		if(tipo != null) string += "Tipo: "+ tipo.getName() + "\n";
